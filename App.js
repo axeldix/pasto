@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import ScreenPaso1 from './screens/screenPaso1/ScreenPaso1';
 import ScreenPaso2 from './screens/screenPaso2/ScreenPaso2';
+import ScreenPaso3 from './screens/screenPaso3/ScreenPaso3';
 
 function HomeScreen() {
   return (
@@ -31,6 +32,7 @@ function MyTabs() {
       <Tab.Screen name="Settings" component={SettingsScreen} />
       <Tab.Screen name="ScreenPaso1" component={ScreenPaso1} />
       <Tab.Screen name="ScreenPaso2" component={ScreenPaso2} />
+      <Tab.Screen name="ScreenPaso3" component={ScreenPaso3} />
     </Tab.Navigator>
   );
 }
