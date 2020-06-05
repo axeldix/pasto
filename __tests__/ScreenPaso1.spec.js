@@ -7,4 +7,9 @@ describe('ScreenPaso1', () => {
     const {queryByText} = render(<ScreenPaso1 />);
     expect(queryByText('Soy la pagina ScreenPaso1')).not.toBeNull();
   });
+
+  it('renders a text input for date', () => {
+    const {queryByPlaceholder} = render(<ScreenPaso1 />);
+    expect(queryByPlaceholder('Fecha')).not.toBeNull();
+  });
 });

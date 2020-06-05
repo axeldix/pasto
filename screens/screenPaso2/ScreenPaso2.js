@@ -6,7 +6,7 @@ export default function ScreenPaso1() {
     return (
         <View style={{ flex:1, justifyContent: 'center', alignItems: 'center'}}>
             <Text>
-                Soy la pagina ScreenPaso2
+                ScreenPaso2
             </Text>
         </View>
     );
