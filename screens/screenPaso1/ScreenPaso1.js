@@ -1,17 +1,31 @@
 import React from 'react';
-import { View, Text, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
+import { globalStyles } from '../../styles/globalStyles';
 
 export default function ScreenPaso1() {
   return (
-    <View style={{ flex:1, justifyContent: 'center', alignItems: 'center'}}>
+    <TouchableWithoutFeedback
+      onPress={() => Keyboard.dismiss()}
+       >
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.screenTitle}>Completá los datos</Text>
 
-      <Text>Soy la pagina ScreenPaso1</Text>
+        <TextInput style={globalStyles.textInput} placeholder="Fecha" />
 
-      <TextInput
-        placeholder="Fecha"
-        >
+        <TextInput style={globalStyles.textInput} placeholder="Localidad" />
 
-      </TextInput>
-    </View>
-  )
+        <TextInput style={globalStyles.textInput} placeholder="Establecimiento" />
+
+        <TextInput style={globalStyles.textInput} placeholder="Lote" />
+
+        <TextInput style={globalStyles.textInput} placeholder="Recurso" />
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
