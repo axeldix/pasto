@@ -7,7 +7,7 @@ describe('Elements of ScreenPaso1', () => {
 
   it('renders the title of the screen', () => {
     const {queryByText} = render(<ScreenPaso1 />);
-    expect(queryByText('Completá los datos')).not.toBeNull();
+    expect(queryByText('Completá los datos: Paso 1')).not.toBeNull();
   });
 
   it('renders a text input for date', () => {

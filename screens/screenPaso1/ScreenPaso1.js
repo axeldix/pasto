@@ -14,7 +14,7 @@ export default function ScreenPaso1() {
       onPress={() => Keyboard.dismiss()}
        >
       <View style={globalStyles.container}>
-        <Text style={globalStyles.screenTitle}>Completá los datos</Text>
+        <Text style={globalStyles.screenTitle}>Completá los datos: Paso 1</Text>
 
         <TextInput style={globalStyles.textInput} placeholder="Fecha" />
 
