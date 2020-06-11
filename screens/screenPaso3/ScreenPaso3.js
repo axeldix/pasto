@@ -1,13 +1,26 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
-
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
+import {globalStyles} from '../../styles/globalStyles';
 
 export default function ScreenPaso3() {
-    return (
-        <View style={{ flex:1, justifyContent: 'center', alignItems: 'center'}}>
-            <Text>
-                Soy la pagina ScreenPaso3
-            </Text>
-        </View>
-    );
+  return (
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+      <View style={globalStyles.container}>
+        <Text style={globalStyles.screenTitle}>
+          Ingrese los Kgs de Materia Verde Disponible
+        </Text>
+
+        <TextInput style={globalStyles.textInput} placeholder="1" />
+
+        <Button title="Agregar Medicion" />
+      </View>
+    </TouchableWithoutFeedback>
+  );
 }
