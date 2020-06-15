@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -6,10 +6,21 @@ import {
   Button,
   TouchableWithoutFeedback,
   Keyboard,
+  ListItem,
 } from 'react-native';
 import {globalStyles} from '../../styles/globalStyles';
+import {Inputs} from '../../components';
 
 export default function ScreenPaso3() {
+
+  const [cantidadMediciones, setCantidadMediciones] = useState(["1"]);
+
+  const handleAgregarMedicion = () => {
+    const ultimoValor = parseInt(cantidadMediciones[cantidadMediciones.length-1]) + 1;
+    const val = ultimoValor.toString()
+    setCantidadMediciones(cantidadMediciones.concat(val));
+  };
+
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={globalStyles.container}>
@@ -17,9 +28,15 @@ export default function ScreenPaso3() {
           Ingrese los Kgs de Materia Verde Disponible
         </Text>
 
-        <TextInput style={globalStyles.textInput} placeholder="1" />
+        <Inputs cantidadMediciones={cantidadMediciones} />
 
-        <Button title="Agregar Medicion" />
+        <Button
+          title="Agregar Medicion"
+          onPress={() => {
+            console.log(cantidadMediciones);
+            handleAgregarMedicion();
+          }}
+        />
       </View>
     </TouchableWithoutFeedback>
   );
