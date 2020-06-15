@@ -11,7 +11,7 @@ describe('ScreenPaso3', () => {
 
   it('renders the textInput for Materia Verde', () => {
     const { queryByPlaceholder } = render(<ScreenPaso3/>);
-    expect(queryByPlaceholder('1')).not.toBeNull();
+    expect(queryByPlaceholder('medicion nº: 1')).not.toBeNull();
   });
 
   it('renders the Button for another input of Materia Verde', () => {
