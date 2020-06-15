@@ -11,24 +11,24 @@ import {
 import {globalStyles} from '../../styles/globalStyles';
 import {Inputs} from '../../components';
 
-export default function ScreenPaso3() {
+export default function ScreenPaso4() {
 
-  const [cantidadMediciones, setCantidadMediciones] = useState(["1"]);
+  const [cantidadMedicionesRem, setCantidadMedicionesRem] = useState(["1"]);
 
   const handleAgregarMedicion = () => {
-    const ultimoValor = parseInt(cantidadMediciones[cantidadMediciones.length-1]) + 1;
+    const ultimoValor = parseInt(cantidadMedicionesRem[cantidadMedicionesRem.length-1]) + 1;
     const val = ultimoValor.toString()
-    setCantidadMediciones(cantidadMediciones.concat(val));
+    setCantidadMedicionesRem(cantidadMedicionesRem.concat(val));
   };
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={globalStyles.container}>
         <Text style={globalStyles.screenTitle}>
-          Ingrese los Kgs de Materia Verde Disponible
+          Ingrese los Kgs de Materia Verde Remanente
         </Text>
 
-        <Inputs cantidadMediciones={cantidadMediciones} />
+        <Inputs cantidadMediciones={cantidadMedicionesRem} />
 
         <Button
           title="Agregar Medicion"

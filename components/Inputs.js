@@ -7,7 +7,7 @@ export default ({cantidadMediciones}) => {
     <FlatList
       data={cantidadMediciones.map((x) => x)}
       renderItem={({item}) => (
-        <TextInput style={globalStyles.textInput} placeholder={`medicion nº: ${item}`} />
+        <TextInput style={globalStyles.textInput} placeholder={`medicion nº: ${item}`} keyboardType="numeric" />
       )}
       keyExtractor={(item) => item}
     />
