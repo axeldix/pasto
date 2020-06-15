@@ -33,7 +33,7 @@ export default function ScreenPaso3() {
         <Button
           title="Agregar Medicion"
           onPress={() => {
-            console.log(cantidadMediciones);
+            console.log("soy ScreenPaso3 "+ cantidadMediciones);
             handleAgregarMedicion();
           }}
         />
