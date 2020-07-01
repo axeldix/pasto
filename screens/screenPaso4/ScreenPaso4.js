@@ -32,6 +32,7 @@ export default function ScreenPaso4() {
 
         <Button
           title="Agregar Medicion"
+          testID="agregarMedicion"
           onPress={() => {
             handleAgregarMedicion();
           }}
