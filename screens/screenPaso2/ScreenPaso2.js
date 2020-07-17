@@ -13,6 +13,7 @@ export default function ScreenPaso1() {
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={globalStyles.container}>
         <Text style={globalStyles.screenTitle}>Completá los datos: Paso 2</Text>
+        <TextInput style={globalStyles.textInput} placeholder="Recurso" />
 
         <TextInput
           placeholder="Superficie de parcela (Ha.)"

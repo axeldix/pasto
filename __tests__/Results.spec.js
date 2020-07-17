@@ -1,15 +1,26 @@
 import React from 'react';
 import {render, fireEvent} from 'react-native-testing-library';
+import {GlobalProvider} from '../context/GlobalProvider';
 import Results from '../screens/results/Results';
 
 describe('Results', () => {
   it('renders the correct message', () => {
-    const {queryByText} = render(<Results />);
+    const {queryByText} = render(
+      <GlobalProvider>
+        {' '}
+        <Results />{' '}
+      </GlobalProvider>,
+    );
     expect(queryByText('Resultados')).not.toBeNull();
   });
 
   it('renders the Button Comenzar', () => {
-    const {queryByText} = render(<Results />);
+    const {queryByText} = render(
+      <GlobalProvider>
+        {' '}
+        <Results />{' '}
+      </GlobalProvider>,
+    );
     expect(queryByText('Guardar')).not.toBeNull();
   });
 });
@@ -22,18 +33,13 @@ describe('Pagina de Resultados', () => {
 
     beforeEach(() => {
       sendHandler = jest.fn();
-      ({getByTestId} = render(<Results/>));
-
-      // fireEvent.changeText(getByTestId('messageText'), 'Hello world');
+      ({getByTestId} = render(
+        <GlobalProvider>
+          {' '}
+          <Results />{' '}
+        </GlobalProvider>,
+      ));
       fireEvent.press(getByTestId('botonGuardar'));
     });
-
-    // it('clears the message field', () => {
-    //   expect(getByTestId('messageText').props.value).toEqual('');
-    // });
-
-    // it('calls the send handler', () => {
-    //   expect(sendHandler).toHaveBeenCalledWith(messageText);
-    // });
   });
 });

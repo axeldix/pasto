@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import {
   View,
   Text,
@@ -10,14 +10,17 @@ import {
 } from 'react-native';
 import {globalStyles} from '../../styles/globalStyles';
 import {Inputs} from '../../components';
+import {GlobalContext} from '../../context/GlobalProvider';
 
 export default function ScreenPaso3() {
+  const {medidas, setMedidas} = useContext(GlobalContext);
 
-  const [cantidadMediciones, setCantidadMediciones] = useState(["1"]);
+  const [cantidadMediciones, setCantidadMediciones] = useState(['1']);
 
   const handleAgregarMedicion = () => {
-    const ultimoValor = parseInt(cantidadMediciones[cantidadMediciones.length-1]) + 1;
-    const val = ultimoValor.toString()
+    const ultimoValor =
+      parseInt(cantidadMediciones[cantidadMediciones.length - 1]) + 1;
+    const val = ultimoValor.toString();
     setCantidadMediciones(cantidadMediciones.concat(val));
   };
 
