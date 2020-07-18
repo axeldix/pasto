@@ -3,9 +3,9 @@ import { TextInput, FlatList, View } from 'react-native';
 import { globalStyles } from '../styles/globalStyles';
 import { GlobalContext } from '../context/GlobalProvider'
 
-export default ({cantidadMediciones}) => {
+export default ({cantidadMediciones, setMedidas}) => {
 
-  const {setMedidas} = useContext(GlobalContext)
+  //const {setMedidasDisponible} = useContext(GlobalContext)
 
   return (
     <FlatList

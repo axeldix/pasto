@@ -13,7 +13,7 @@ import {Inputs} from '../../components';
 import {GlobalContext} from '../../context/GlobalProvider';
 
 export default function ScreenPaso3() {
-  const {medidas, setMedidas} = useContext(GlobalContext);
+  const {medidas, setMedidasDisponible} = useContext(GlobalContext);
 
   const [cantidadMediciones, setCantidadMediciones] = useState(['1']);
 
@@ -31,7 +31,7 @@ export default function ScreenPaso3() {
           Ingrese los Kgs de Materia Verde Disponible
         </Text>
 
-        <Inputs cantidadMediciones={cantidadMediciones} />
+        <Inputs cantidadMediciones={cantidadMediciones} setMedidas={setMedidasDisponible} />
 
         <Button
           title="Agregar Medicion"

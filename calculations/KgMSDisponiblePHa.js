@@ -10,6 +10,5 @@ export default function KilosDeMSDisponiblePorHectarea(
     (( Promedio(arrMateriaVerdeDisponible) / areaCuadrante) *
     porcentajeMateriaSeca *
     100);
-    console.log(res);
   return res;
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
 import {
   View,
   Text,
@@ -10,9 +10,10 @@ import {
 } from 'react-native';
 import {globalStyles} from '../../styles/globalStyles';
 import {Inputs} from '../../components';
+import {GlobalContext} from '../../context/GlobalProvider';
 
 export default function ScreenPaso4() {
-
+const {medidas, setMedidasRemanente} = useContext(GlobalContext);
   const [cantidadMedicionesRem, setCantidadMedicionesRem] = useState(["1"]);
 
   const handleAgregarMedicion = () => {
@@ -28,7 +29,7 @@ export default function ScreenPaso4() {
           Ingrese los Kgs de Materia Verde Remanente
         </Text>
 
-        <Inputs cantidadMediciones={cantidadMedicionesRem} />
+        <Inputs cantidadMediciones={cantidadMedicionesRem} setMedidas={setMedidasRemanente} />
 
         <Button
           title="Agregar Medicion"

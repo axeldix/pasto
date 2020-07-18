@@ -25,12 +25,12 @@ describe('Elements of screenPaso2', () => {
   });
 
   it('renders a text input for Cows Quantity', () => {
-    const {queryByPlaceholder} = render(<ScreenPaso2 />);
+    const {queryByPlaceholder} = render(<GlobalProvider> <ScreenPaso2 /> </GlobalProvider>);
     expect(queryByPlaceholder('Cantidad de Vacas')).not.toBeNull();
   });
 
   it('renders a text input for Quadrant Area', () => {
-    const {queryByPlaceholder} = render(<ScreenPaso2 />);
+    const {queryByPlaceholder} = render(<GlobalProvider> <ScreenPaso2 /> </GlobalProvider>);
     expect(queryByPlaceholder('Area del Cuadrante')).not.toBeNull();
   });
 
