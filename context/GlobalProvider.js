@@ -15,8 +15,8 @@ class GlobalProvider extends React.Component {
     },
     areaCuadrante: 1,
     porcentajeMateriaSeca: 1,
-    superficie: 0,
-    cantidadDeVacas: 0,
+    superficieParcela: 0,
+    cantidadDeAnimales: 0,
     recurso: "",
     localidad:"",
     fecha:"",
@@ -72,16 +72,16 @@ class GlobalProvider extends React.Component {
     });
   };
 
-  setSuperficie = (value) => {
+  setSuperficieParcela = (value) => {
     this.setState(
-      {superficie: value},
-      console.log('superficie seteada', this.state.superficie),
+      {superficieParcela: value},
+      console.log('superficie seteada', this.state.superficieParcela),
     );
   };
 
-  setCantidadDeVacas = (value) => {
-    this.setState({cantidadDeVacas: value}, () => {
-      console.log('cantidadDeVacas seteada', this.state.cantidadDeVacas);
+  setCantidadDeAnimales = (value) => {
+    this.setState({cantidadDeAnimales: value}, () => {
+      console.log('cantidadDeAnimales seteada', this.state.cantidadDeAnimales);
     });
   };
 
@@ -119,8 +119,8 @@ class GlobalProvider extends React.Component {
           medidas: this.state.medidas,
           areaCuadrante: this.state.areaCuadrante,
           porcentajeMateriaSeca: this.state.porcentajeMateriaSeca,
-          superficie: this.state.superficie,
-          cantidadDeVacas: this.state.cantidadDeVacas,
+          superficieParcela: this.state.superficieParcela,
+          cantidadDeAnimales: this.state.cantidadDeAnimales,
           recurso: this.state.recurso,
           lote: this.state.lote,
           fecha: this.state.fecha,
@@ -132,8 +132,8 @@ class GlobalProvider extends React.Component {
           setMedidasRemanente: this.setMedidasRemanente,
           setAreaCuadrante: this.setAreaCuadrante,
           setPorcentajeMateriaSeca: this.setPorcentajeMateriaSeca,
-          setSuperficie: this.setSuperficie,
-          setCantidadDeVacas: this.setCantidadDeVacas,
+          setSuperficieParcela: this.setSuperficieParcela,
+          setCantidadDeAnimales: this.setCantidadDeAnimales,
           setRecurso: this.setRecurso,
           setLote: this.setLote,
           setFecha: this.setFecha,

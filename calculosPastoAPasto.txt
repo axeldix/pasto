@@ -105,13 +105,12 @@ IMPLEMENTACION EN JS
 
 Calculo de Metros cuadrados por animal
 
-  "consumo animal" = ( ("consumo materia seca por hectarea") * ("superficie de parcela") ) / ("cantidad de vacas")
+  "consumo animal" = ( ("superficie de parcela") / ("cantidad de vacas") ) * ("10000")
 
 *********--------------------------------------------------------------------*********
 
 IMPLEMENTACION EN JS
-
-    function ConsumoAnimal() {
-      var res = (getNumber("lbl_ResConsumoMsha") * getNumber("text_inputSupparcela")) / getNumber("text_inputNrovaca");
-      return res;
+  function M2animal() {
+    var res = (getNumber("text_inputSupparcela") / getNumber("text_inputNrovaca"))*10000;
+    return res;
     }

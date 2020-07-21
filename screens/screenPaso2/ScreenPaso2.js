@@ -12,14 +12,14 @@ import {globalStyles} from '../../styles/globalStyles';
 export default function ScreenPaso1() {
   const {
     setRecurso,
-    setSuperficie,
+    setSuperficieParcela,
     setPorcentajeMateriaSeca,
-    setCantidadDeVacas,
+    setCantidadDeAnimales,
     setAreaCuadrante,
   } = useContext(GlobalContext);
 
   const handleSuperficie = (value) => {
-    setSuperficie(value);
+    setSuperficieParcela(value);
   };
 
   const handlePorcentajeMateriaSeca = (value) => {
@@ -27,7 +27,7 @@ export default function ScreenPaso1() {
   };
 
   const handleCantidadVacas = (value) => {
-    setCantidadDeVacas(value);
+    setCantidadDeAnimales(value);
   };
 
   const handleAreaCuadrante = (value) => {

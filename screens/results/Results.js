@@ -5,54 +5,55 @@ import Promedio from '../../calculations/Promedio';
 import KgMSDisponiblePHa from '../../calculations/KgMSDisponiblePHa';
 import KgMSRemanentePHa from '../../calculations/KgMSRemanentePHa';
 import ConsumoMSPorHectarea from '../../calculations/ConsumoDeMSPHa';
+import MetrosCuadradosPorAnimal from '../../calculations/MetrosCuadradosPorAnimal';
+import ConsumoAnimal from '../../calculations/ConsumoAnimal';
+import PorcentajeDeAprovechamiento from '../../calculations/PorcentajeDeAprovechamiento';
 import {GlobalContext} from '../../context/GlobalProvider';
 
 export default function Results() {
-  const {medidas, areaCuadrante, porcentajeMateriaSeca} = useContext(
+  const {medidas, areaCuadrante, porcentajeMateriaSeca, superficieParcela, cantidadDeAnimales} = useContext(
     GlobalContext,
   );
 
-  const MSDisponible = KgMSDisponiblePHa(
+  const materiaSecaDisponible = KgMSDisponiblePHa(
     [medidas.materiaVerdeDisponible],
     areaCuadrante,
     porcentajeMateriaSeca,
   )
 
-  const MSRemanente = KgMSRemanentePHa(
+  const materiaSecaRemanente = KgMSRemanentePHa(
     [medidas.materiaVerdeRemanente],
     areaCuadrante,
     porcentajeMateriaSeca,
   )
+
+  const consumoDeMateriaSecaPHa = ConsumoMSPorHectarea(materiaSecaDisponible, materiaSecaRemanente)
+
+  const consumoDeMateriaSecaPAnimalPTurno = ConsumoAnimal(consumoDeMateriaSecaPHa, superficieParcela, cantidadDeAnimales)
+
+  const porcentajeDeAprovechamiento = PorcentajeDeAprovechamiento(consumoDeMateriaSecaPHa, materiaSecaDisponible)
+
+  const metrosCuadradosPAnimal = MetrosCuadradosPorAnimal(superficieParcela, cantidadDeAnimales)
 
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.screenTitle}>Resultados</Text>
       <Text>Kg MS/Ha Disponible</Text>
       <Text>
-        {KgMSDisponiblePHa(
-          [medidas.materiaVerdeDisponible],
-          areaCuadrante,
-          porcentajeMateriaSeca,
-        )}{' '}
-        valor
+        {materiaSecaDisponible}
       </Text>
       <Text>Kg MS/Ha Remanente</Text>
       <Text>
-        {KgMSRemanentePHa(
-          [medidas.materiaVerdeRemanente],
-          areaCuadrante,
-          porcentajeMateriaSeca,
-        )}{' '}
-        valor
+        {materiaSecaRemanente}
       </Text>
       <Text>Consumo Kg MS/Ha</Text>
-      <Text>{ConsumoMSPorHectarea(MSDisponible, MSRemanente)}valor</Text>
+      <Text>{consumoDeMateriaSecaPHa}</Text>
       <Text>Consumo Kg MS/Animal/Turno</Text>
-      <Text>valor</Text>
+      <Text>{consumoDeMateriaSecaPAnimalPTurno}</Text>
       <Text>% Aprovechamiento</Text>
-      <Text>valor</Text>
+      <Text>{porcentajeDeAprovechamiento}</Text>
       <Text>m2/Animal</Text>
-      <Text>valor</Text>
+      <Text>{metrosCuadradosPAnimal}</Text>
       <Button title="Guardar" testID="botonGuardar" />
     </View>
   );
