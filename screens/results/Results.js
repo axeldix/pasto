@@ -40,20 +40,20 @@ export default function Results() {
       <Text style={globalStyles.screenTitle}>Resultados</Text>
       <Text>Kg MS/Ha Disponible</Text>
       <Text>
-        {materiaSecaDisponible}
+        {materiaSecaDisponible }
       </Text>
       <Text>Kg MS/Ha Remanente</Text>
       <Text>
         {materiaSecaRemanente}
       </Text>
       <Text>Consumo Kg MS/Ha</Text>
-      <Text>{consumoDeMateriaSecaPHa}</Text>
+      <Text>{isNaN(consumoDeMateriaSecaPHa) ? 0 : consumoDeMateriaSecaPHa}</Text>
       <Text>Consumo Kg MS/Animal/Turno</Text>
-      <Text>{consumoDeMateriaSecaPAnimalPTurno}</Text>
+      <Text>{isNaN(consumoDeMateriaSecaPAnimalPTurno) ? 0 : consumoDeMateriaSecaPAnimalPTurno}</Text>
       <Text>% Aprovechamiento</Text>
-      <Text>{porcentajeDeAprovechamiento}</Text>
+      <Text>{isNaN(porcentajeDeAprovechamiento) ? 0 : porcentajeDeAprovechamiento}</Text>
       <Text>m2/Animal</Text>
-      <Text>{metrosCuadradosPAnimal}</Text>
+      <Text>{isNaN(metrosCuadradosPAnimal) ? 0 : metrosCuadradosPAnimal}</Text>
       <Button title="Guardar" testID="botonGuardar" />
     </View>
   );
